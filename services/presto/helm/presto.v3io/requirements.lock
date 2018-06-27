@@ -4,6 +4,6 @@ dependencies:
   version: "0.2"
 - name: v3io-configs
   repository: https://v3io.github.io/helm-charts/stable
-  version: 0.1.0
-digest: sha256:e4c084c5306c88c961b9f3b8dfc2178afaabfb4996f44ab60f75139d6c9f7e18
-generated: 2018-06-20T16:58:55.481785756+03:00
+  version: 0.2.0
+digest: sha256:8a55647b35d461087c3e8e2085b208cce1d19675113d661b6bd95cad3a66e30b
+generated: 2018-06-27T12:28:24.796442027+03:00
