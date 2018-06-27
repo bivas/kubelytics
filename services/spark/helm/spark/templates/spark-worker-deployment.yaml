@@ -54,7 +54,7 @@ spec:
 {{- end }}
         - name: spark-worker-config
           configMap:
-            name: {{ .Release.Name }}-spark-worker-config
+            name: {{ template "spark.worker-name" . }}
 {{- if .Values.debug.enabled }}
         - name: spark-debug-config
           configMap:

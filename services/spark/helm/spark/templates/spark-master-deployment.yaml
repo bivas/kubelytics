@@ -55,7 +55,7 @@ spec:
 {{- end }}
         - name: spark-master-config
           configMap:
-            name: {{ .Release.Name }}-spark-master-config
+            name: {{ template "spark.master-name" . }}
 {{- if .Values.debug.enabled }}
         - name: spark-debug-config
           configMap:

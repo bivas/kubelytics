@@ -81,3 +81,4 @@ zeppelin:
 debug:
   enabled: false
   log: {}
+  # com.acme.path: DEBUG
