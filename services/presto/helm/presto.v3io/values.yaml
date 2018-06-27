@@ -27,7 +27,7 @@ nameOverride: presto
 
 global:
   v3io:
-    configPath: /etc/config/v3io
+    configMountPath: /etc/config/v3io
 
 v3io:
   username: iguazio
