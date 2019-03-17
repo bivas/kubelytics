@@ -48,7 +48,7 @@ hadoop:
 	@echo Building hadoop image $(DOCKER_REPOSITORY)/hadoop:$(HADOOP_VERSION)
 	@cd hadoop/docker && \
 	docker build \
-        --build-arg DOCKER_REPOSITORY=$(DOCKER_REPOSITORY) \
+        --build-arg DOCKER_USER=$(DOCKER_REPOSITORY) \
         --build-arg BASE_DOCKER_VERSION=$(BASE_DOCKER_VERSION) \
         --build-arg HADOOP_VERSION="hadoop-$(HADOOP_VERSION)" \
         --tag $(DOCKER_REPOSITORY)/hadoop:$(HADOOP_VERSION) .
@@ -58,7 +58,7 @@ spark:
 	@echo Building spark image $(DOCKER_REPOSITORY)/spark:$(SPARK_VERSION)-$(HADOOP_VERSION)
 	@cd spark/docker && \
 	docker build \
-        --build-arg DOCKER_REPOSITORY=$(DOCKER_REPOSITORY) \
+        --build-arg DOCKER_USER=$(DOCKER_REPOSITORY) \
         --build-arg HADOOP_VERSION=$(HADOOP_VERSION) \
         --build-arg SPARK_VERSION="spark-$(SPARK_VERSION)" \
         --tag $(DOCKER_REPOSITORY)/spark:$(SPARK_VERSION)-$(HADOOP_VERSION) .
@@ -68,7 +68,7 @@ zeppelin:
 	@echo Building Zeppelin $(DOCKER_REPOSITORY)/zeppelin:$(ZEPPELIN_VERSION)-$(SPARK_VERSION)
 	@cd zeppelin/docker && \
 	docker build \
-        --build-arg DOCKER_REPOSITORY=$(DOCKER_REPOSITORY) \
+        --build-arg DOCKER_USER=$(DOCKER_REPOSITORY) \
         --build-arg HADOOP_VERSION=$(HADOOP_VERSION) \
         --build-arg SPARK_VERSION=$(SPARK_VERSION) \
         --build-arg ZEPPELIN_VERSION=$(ZEPPELIN_VERSION) \
@@ -79,7 +79,7 @@ jupyter:
 	@echo Building Jupyter $(DOCKER_REPOSITORY)/jupyter-ml:$(JUPYTER_MINICONDA_VERSION)-$(SPARK_VERSION)
 	@cd jupyter/docker && \
 	docker build \
-        --build-arg DOCKER_REPOSITORY=$(DOCKER_REPOSITORY) \
+        --build-arg DOCKER_USER=$(DOCKER_REPOSITORY) \
         --build-arg HADOOP_VERSION=$(HADOOP_VERSION) \
         --build-arg SPARK_VERSION=$(SPARK_VERSION) \
         --build-arg MINICONDA_VERSION=$(JUPYTER_MINICONDA_VERSION) \
@@ -91,7 +91,7 @@ presto:
 	@echo Building Presto $(DOCKER_REPOSITORY)/presto:$(PRESTO_VERSION)-$(HADOOP_VERSION)
 	@cd presto/docker && \
 	docker build \
-        --build-arg DOCKER_REPOSITORY=$(DOCKER_REPOSITORY) \
+        --build-arg DOCKER_USER=$(DOCKER_REPOSITORY) \
         --build-arg HADOOP_VERSION=$(HADOOP_VERSION) \
         --build-arg PRESTO_VERSION=$(PRESTO_VERSION) \
         --tag $(DOCKER_REPOSITORY)/presto:$(PRESTO_VERSION)-$(HADOOP_VERSION) .
@@ -101,7 +101,7 @@ shell:
 	@echo Building Shell Container $(DOCKER_REPOSITORY)/shell:$(HADOOP_VERSION)-$(SPARK_VERSION)-$(PRESTO_VERSION)
 	@cd shell/docker && \
 	docker build \
-        --build-arg DOCKER_REPOSITORY=$(DOCKER_REPOSITORY) \
+        --build-arg DOCKER_USER=$(DOCKER_REPOSITORY) \
         --build-arg HADOOP_VERSION=$(HADOOP_VERSION) \
         --build-arg SPARK_VERSION=$(SPARK_VERSION) \
         --build-arg PRESTO_VERSION=$(PRESTO_VERSION) \
